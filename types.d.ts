@@ -57,12 +57,14 @@ export type Row = Cell[]
 
 export interface ParsedObjectsResult<T extends object> {
 	rows: T[];
+  mergedCells: T[];
 	errors: Error[];
 }
 
 interface ParseCommonOptions {
 	sheet?: number | string;
 	trim?: boolean;
+  properties?: boolean;
 }
 
 export interface ParseWithSchemaOptions<T extends object> extends ParseCommonOptions {
